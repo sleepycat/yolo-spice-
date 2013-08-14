@@ -15,8 +15,8 @@ class Magazine < ActiveRecord::Base
 
 	def open_status?
     
-	  if start_date < current_date && end_date > current_date #<-- Time.zone.now
-	    "Open"
+	  if (start_date.month <= current_date.month && end_date.month >= current_date.month) && (start_date.day <= current_date.day && end_date.day >= current_date.day)
+      "Open"
 		else
 	    "Closed"
 	end

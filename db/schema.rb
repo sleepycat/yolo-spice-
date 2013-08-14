@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20130813213011) do
 
   create_table "magazines", force: true do |t|
+    t.string   "status"
     t.string   "title"
     t.string   "payment"
     t.string   "magazineformat"

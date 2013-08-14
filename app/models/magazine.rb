@@ -1,7 +1,7 @@
 class Magazine < ActiveRecord::Base
 	
 	#def submit_to_address
-	#	@submit_to_address = :address_number + unit_number + street_name + city_name + province_name + country_name}"
+	#	@submit_to_address = "address_number + unit_number + street_name + city_name + province_name + country_name"
 	#end
 
 	 #def current_date

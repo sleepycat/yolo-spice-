@@ -1,8 +1,11 @@
+<!--is this page one only an admin would see? 
+  No: everyone sees it if they click on the title. It is also the page that is redirected to after the admin has made changes or added a new magazine to the database though.!-->
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Status:</strong>
-  <%#= @magazine.status %>
+  <%= @magazine.open_status? %>
 </p>
 
 <p>
@@ -11,7 +14,7 @@
 </p>
 
 <p>
-  <strong>Readingperiod:</strong>
+  <strong>Reading Period:</strong>
   <%= @magazine.start_date.strftime("%B-%d")%> to <%= @magazine.end_date.strftime("%B-%d") %>
 </p>
 
@@ -21,12 +24,12 @@
 </p>
 
 <p>
-  <strong>Magazineformat:</strong>
+  <strong>Magazine Format:</strong>
   <%= @magazine.magazineformat %>
 </p>
 
 <p>
-  <strong>Submissionrestriction:</strong>
+  <strong>Submission Restriction:</strong>
   <%= @magazine.submissionrestriction %>
 </p>
 
@@ -36,19 +39,19 @@
 </p>
 
 <p>
-  <strong>Publicationcycle:</strong>
+  <strong>Publication Cycle:</strong>
   <%= @magazine.publicationcycle %>
 </p>
 
 <p>
-  <strong>Submissionlimit:</strong>
+  <strong>Submission Limit:</strong>
   <%= @magazine.submissionlimit %>
 </p>
 
 <p>
-  <strong>Submittoaddress:</strong>
-  <%= @submit_to_address %>
+  <strong>Submit To Address:</strong>
+  <%= @magazine.submit_to_address %>
 </p>
 
-<%= link_to 'Edit', edit_magazine_path(@magazine) %> |
+<!--Should only be available administratively <%#= link_to 'Edit', edit_magazine_path(@magazine) %> !-->
 <%= link_to 'Back', magazines_path %>

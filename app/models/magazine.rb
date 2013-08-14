@@ -1,8 +1,9 @@
 class Magazine < ActiveRecord::Base
-	
-	#def submit_to_address
-	#	@submit_to_address = "address_number + unit_number + street_name + city_name + province_name + country_name"
-	#end
+  #before_save :submit_to_address
+  
+	def submit_to_address
+    "#{address_number}, #{unit_number}, #{street_name}, #{city_name}, #{province_name}, #{country_name}"
+	end
 
 	 #def current_date
 	 	#@current_date = Time.now.strftime("%B-%d")

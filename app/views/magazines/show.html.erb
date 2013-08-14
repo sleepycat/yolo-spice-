@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%#= @magazine.status %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @magazine.title %>
+</p>
+
+<p>
+  <strong>Readingperiod:</strong>
+  <%= @magazine.start_date.strftime("%B-%d")%> to <%= @magazine.end_date.strftime("%B-%d") %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @magazine.payment %>
+</p>
+
+<p>
+  <strong>Magazineformat:</strong>
+  <%= @magazine.magazineformat %>
+</p>
+
+<p>
+  <strong>Submissionrestriction:</strong>
+  <%= @magazine.submissionrestriction %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @magazine.genre %>
+</p>
+
+<p>
+  <strong>Publicationcycle:</strong>
+  <%= @magazine.publicationcycle %>
+</p>
+
+<p>
+  <strong>Submissionlimit:</strong>
+  <%= @magazine.submissionlimit %>
+</p>
+
+<p>
+  <strong>Submittoaddress:</strong>
+  <%= @submit_to_address %>
+</p>
+
+<%= link_to 'Edit', edit_magazine_path(@magazine) %> |
+<%= link_to 'Back', magazines_path %>

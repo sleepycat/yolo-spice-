@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Litmag3</title>
+  
+  <%= stylesheet_link_tag    "normalize", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "grid", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+</head>
+<body>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+
+						<a class="navbar-brand" href="#">Litmag</a>
+						<!--<div class="nav-collapse collapse navbar-inverse-collapse">!-->
+							<ul class="nav navbar-nav">
+								<li><%= link_to "All Magazines", magazines_path %></li>
+								<li><a href="#">My Magazines</a></li>	 
+							</ul>
+							<p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+						<!--</div>!-->
+				</div>
+			</div>
+		</div>
+		
+		<div class="container clearfix">
+			<!--<div class="grid_4">
+				<h1>Litmag</h1>
+			</div>
+			<div class="grid_8 omega">
+				<ul class="nav">
+					
+				</ul>
+			</div>!-->
+
+			<%= yield %>
+		</div>
+		<!--why won't my footer go UNDER my yield?
+		<div class="#">
+			<em>Footer - will contain a running Twitterfeed</em>
+		</div>
+		!-->
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  status: MyString
+  title: MyString
+  readingperiod: 2013-08-05
+  payment: MyString
+  magazineformat: MyString
+  submissionrestriction: MyText
+  genre: MyString
+  publicationcycle: MyString
+  submissionlimit: MyString
+  submittoaddress: MyText
+
+two:
+  status: MyString
+  title: MyString
+  readingperiod: 2013-08-05
+  payment: MyString
+  magazineformat: MyString
+  submissionrestriction: MyText
+  genre: MyString
+  publicationcycle: MyString
+  submissionlimit: MyString
+  submittoaddress: MyText

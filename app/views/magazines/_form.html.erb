@@ -1,0 +1,85 @@
+
+  <%= form_for(@magazine) do |f| %>
+  <% if @magazine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@magazine.errors.count, "error") %> prohibited this magazine from being saved:</h2>
+
+      <ul>
+      <% @magazine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--Want Open/Closed to be set by the Reading Period Opens/Reading Period Closes
+  <div class="field">
+    <%#= f.label :status, 'Status' %><br>
+    <%#= f.text_field :status %>
+  </div>!-->
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date, 'Reading Period Opens'%><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date, 'Reading Period Closes'%><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :payment %><br>
+    <%= f.text_field :payment %>
+  </div>
+  <div class="field">
+    <%= f.label :magazineformat, 'Format' %><br>
+    <%= f.text_field :magazineformat %>
+  </div>
+  <div class="field">
+    <%= f.label :submissionrestriction, 'Submission Restrictions' %><br>
+    <%= f.text_area :submissionrestriction %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %><br>
+    <%= f.select :genre, [['What shows up in your view', 'What shows up in your database'],
+                              ['Another Genre', 'Another Genre'],
+                              ['Genre 3', 'Genre 3'],
+                              ['Genre 4', 'Genre 4']] %>
+  </div>
+  <div class="field">
+    <%= f.label :publicationcycle, 'Publication Cycle' %><br>
+    <%= f.text_field :publicationcycle %>
+  </div>
+  <div class="field">
+    <%= f.label :submissionlimit, 'Limit on number of Submissions'%><br>
+    <%= f.text_field :submissionlimit %>
+  </div>
+
+  <div class="field">Submit to Address<br />
+    <%= f.label :address_number, 'Street Number' %><br>
+    <%= f.text_field :address_number %>
+  </div>
+  <div class="field">
+    <%= f.label :street_name, 'Street Name and Type (e.g. Walker Rd.)'%><br>
+    <%= f.text_field :street_name %>
+   </div>
+   <div class="field">
+    <%= f.label :city_name, 'City'%><br>
+    <%= f.text_field :city_name %>
+   </div>
+   <div class="field">
+    <%= f.label :province_name, 'Province/State'%><br>
+    <%= f.text_field :province_name %>
+   </div>
+   <div class="field">
+    <%= f.label :country_name, 'Country'%><br>
+    <%= f.text_field :country_name %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

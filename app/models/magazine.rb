@@ -9,14 +9,16 @@ class Magazine < ActiveRecord::Base
     "#{start_date.strftime("%B-%d")} to #{end_date.strftime("%B-%d")}"
   end
 
-	 #def current_date
-	 	#@current_date = Time.now.strftime("%B-%d")
-	 #end
+	def current_date
+    @current_date = Time.now #Time.now.strftime("%B-%d")
+	end
 
-	#def open_status (magazine)
-	#	if start_date < current_date && end_date > current_date <-- Time.zone.now
-	#		puts "Open"
-		#else
-	#		puts "Closed"
-	#end
+	def open_status?
+    
+	  if start_date < current_date && end_date > current_date #<-- Time.zone.now
+	    "Open"
+		else
+	    "Closed"
+	end
+  end
 end

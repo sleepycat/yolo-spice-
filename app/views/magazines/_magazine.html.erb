@@ -2,11 +2,8 @@
         <tr>
           <!--<td>Checkmark box that triggers a "save to" the user's personal table</td>!-->
           <!--This needs to link to some crazy back-end stuff that can determine if the magazine is open or closed. !-->
-          <td><%# if magazine.open_status? %>
-<!--               <p>Open</P>
-                <%# else %>
-              <p>Closed</p> -->
-              <%# end %></td>
+          <td><%= magazine.open_status? %></td>
+<!--       
           <!--need this to call the thing that will open and close the magazine !-->
           <td><%= link_to magazine.title, magazine_path(magazine) %></td>
           <td><%= magazine.reading_period %></td>

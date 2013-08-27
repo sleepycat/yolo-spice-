@@ -1,9 +1,5 @@
 <h1>Show page</h1>
 
-<h1><%#= @user.handle %> - <%= @user.email %></h1> <!--was user.name !-->
+<h1><%= @user.email %></h1>
 
-<%#= image_tag(@user.avatar_url) %>
-
-<%# @user_magazines.each do |magazine| %>
-<!--<div><%#= link_to magazine.content, magazine_path(magazine) %></div>!-->
-<% end %>
+<%#= render @user.magazines # you will need a partial for this to work... %>

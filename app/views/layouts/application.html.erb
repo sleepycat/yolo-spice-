@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Litmag3</title>
-  
-  <%= stylesheet_link_tag    "normalize", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "grid", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <title>Litmag3</title>
 
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
-</head>
-<body>
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
+    <%= stylesheet_link_tag    "normalize", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "grid", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
 
-						<a class="navbar-brand" href="#">Litmag</a>
-						<!--<div class="nav-collapse collapse navbar-inverse-collapse">!-->
-							<ul class="nav navbar-nav">
-								<li><%= link_to "All Magazines", magazines_path %></li>
-								<li><a href="#">My Magazines</a></li>	 
-							</ul>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
 
-							<p class="navbar-text pull-right">
-								<% if current_user %> 
-									Signed in as <%= current_user %>.
-									<%= link_to "Log out", logout_path %>
-								<% else %>
-									<%= link_to "Sign up", sign_up_path %> or
-									<%= link_to "Log in", login_path %>
-								<% end %>
-							</p>
-						<!--</div>!-->
-				</div>
-			</div>
-		</div>
-		
-		<div class="container clearfix">
-			<!--<div class="grid_4">
-				<h1>Litmag</h1>
-			</div>
-			<div class="grid_8 omega">
-				<ul class="nav">
-					
-				</ul>
-			</div>!-->
+          <a class="navbar-brand" href="#">Litmag</a>
+          <!--<div class="nav-collapse collapse navbar-inverse-collapse">!-->
+            <ul class="nav navbar-nav">
+              <li><%= link_to "All Magazines", magazines_path %></li>
+              <li><a href="#">My Magazines</a></li>
+            </ul>
 
-			<%= yield %>
-		</div>
-		<!--why won't my footer go UNDER my yield?
-		<div class="#">
-			<em>Footer - will contain a running Twitterfeed</em>
-		</div>
-		!-->
-	</div>
+            <p class="navbar-text pull-right">
+            <% if current_user %>
+              Signed in as <%= current_user.email %>
+              <%= link_to "Log out", logout_path %>
+            <% else %>
+              <%= link_to "Sign up", sign_up_path %> or
+              <%= link_to "Log in", login_path %>
+            <% end %>
+            </p>
+            <!--</div>!-->
+        </div>
+      </div>
+    </div>
+
+    <div class="container clearfix">
+      <!--<div class="grid_4">
+        <h1>Litmag</h1>
+      </div>
+      <div class="grid_8 omega">
+        <ul class="nav">
+
+        </ul>
+      </div>!-->
+
+      <%= yield %>
+    </div>
+    <!--why won't my footer go UNDER my yield?
+    <div class="#">
+      <em>Footer - will contain a running Twitterfeed</em>
+    </div>
+    !-->
+  </div>
 </body>
 </html>

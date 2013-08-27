@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
 
-before_action :check_user_login, except: [:new, :create]
+  before_action :check_user_login, except: [:new, :create]
 
   def new
-    @user = User.new(user_params)
+    @user = User.new
   end
 
-  def create_session
+  def create
     @user = User.new(user_params)
+    binding.pry
     if @user.save
       #UserMailer.confirm_email(@user).deliver
       redirect_to user_path(@user), :notice => "Signed up!"
@@ -36,8 +37,13 @@ before_action :check_user_login, except: [:new, :create]
   private
 
   def user_params
-  #   params.require(:user).permit(:email, :password)
+     params.require(:user).permit(:email, :password, :password_confirmation)
   end
+
+  def check_user_login
+    true
+  end
+
 end
 #def new
 #     @user = User.new
@@ -78,9 +84,9 @@ end
 #   #   @user = User.find(params[:id])
 #   # end
 
-#   def index
-#     @users = User.order(:name)
-#   end
+   def index
+     @users = User.order(:name)
+   end
 
 #   def update
 #     respond_to do |format|

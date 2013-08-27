@@ -1,7 +1,6 @@
 class MagazinesController < ApplicationController
   before_action :set_magazine, only: [:show, :edit, :update, :destroy]
 
-  
   # GET /magazines
   # GET /magazines.json
   def index
@@ -10,12 +9,9 @@ class MagazinesController < ApplicationController
 
   # GET /magazines/1
   # GET /magazines/1.json
-  
   def show
     @magazine = Magazine.find(params[:id])
   end
-
-  
 
   # GET /magazines/new
   def new

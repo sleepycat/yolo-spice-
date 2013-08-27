@@ -1,43 +1,31 @@
 class SessionsController < ApplicationController
+
   def new_session
     @user = User.new
   end
 
-   def create
-    @user = User.find_by(email: params[:email])
-
-    if @user && login_valid?(@user)
-      session[:user_id] = @user.id
-      redirect_to user_path(user), :notice => "Signed in!"
+  def create
+    user = User.find_by(email: params[:user][:email])
+      unless user && user.authenticate(params[:user][:password])
+        user = nil
+      end
+  if user
+      session[:user_id] = user.id
+      redirect_to user_path(user)
     else
-      flash[:error] = "You silly person; that email/password combination doesn’t seem right."
-      redirect_to root_url
+      flash[:error] = "Incorrect password."
+      redirect_to login_path
     end
   end
-
-
-  # def create_session
-  #   user = User.find_by(email: params[:user][:email])
-  #     unless user && user.authenticate(params[:user][:password])
-  #       user = nil
-  #     end 
-  # if user
-  #     session[:user_id] = user.id
-  #     redirect_to user_path(user)
-  #   else
-  #     flash[:error] = "Incorrect password."
-  #     redirect_to login_path
-  #   end
-  # end
 
   def logout
     reset_session
     redirect_to login_path
   end
 
-  private 
+  private
 
-   def login_valid?(user)
+  def login_valid?(user)
     if Rails.env.test?
       if params[:email][:password_digest] == user.password_digest
         return true
@@ -71,5 +59,5 @@ end
 #   # 	session[:user_id] = nil
 #   # 	redirect_to root_url, :notice => "Logged out!"
 #   # end
-  
+
 

@@ -3,8 +3,6 @@
           <!--<td>Checkmark box that triggers a "save to" the user's personal table</td>!-->
           <!--This needs to link to some crazy back-end stuff that can determine if the magazine is open or closed. !-->
           <td><%= magazine.open_status? %></td>
-<!--       
-          need this to call the thing that will open and close the magazine !-->
           <td><%= link_to magazine.title, magazine_path(magazine) %></td>
           <td><%= magazine.reading_period %></td>
           <!--need to get this to call two dates? !-->
@@ -17,8 +15,8 @@
           <td><%= magazine.submit_to_address %></td>
           
           <!--These should only be available administratively
-          <td><%= link_to 'Edit', edit_magazine_path(magazine) %></td>
-          <td><%= link_to 'Destroy', magazine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%#= link_to 'Edit', edit_magazine_path(magazine) %></td>
+          <td><%#= link_to 'Destroy', magazine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           !-->
         </tr>
       <% end %>
@@ -27,4 +25,3 @@
 
  <!-- inherited from bootstrap, but it's been removed. I want this little button to be in the first row. <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
           </button> !-->
-  <br>

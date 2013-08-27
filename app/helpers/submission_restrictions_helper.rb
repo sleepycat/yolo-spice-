@@ -1,0 +1,2 @@
+module SubmissionRestrictionsHelper
+end

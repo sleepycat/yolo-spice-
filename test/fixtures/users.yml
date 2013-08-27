@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+naomi:
+  email: naomi@fakeemail.com
+  password_digest: MyString
+
+george:
+  email: yours@anotherfakeemail.com
+  password_digest: MyString

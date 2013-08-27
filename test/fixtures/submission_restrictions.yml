@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gender: MyString
+  ethnicity: MyString
+  age: MyString
+  magazine_id: 
+
+two:
+  gender: MyString
+  ethnicity: MyString
+  age: MyString
+  magazine_id: 

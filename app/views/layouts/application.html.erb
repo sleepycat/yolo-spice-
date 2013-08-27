@@ -23,7 +23,16 @@
 								<li><%= link_to "All Magazines", magazines_path %></li>
 								<li><a href="#">My Magazines</a></li>	 
 							</ul>
-							<p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+
+							<p class="navbar-text pull-right">
+								<% if current_user %> 
+									Signed in as <%= current_user %>.
+									<%= link_to "Log out", logout_path %>
+								<% else %>
+									<%= link_to "Sign up", sign_up_path %> or
+									<%= link_to "Log in", login_path %>
+								<% end %>
+							</p>
 						<!--</div>!-->
 				</div>
 			</div>

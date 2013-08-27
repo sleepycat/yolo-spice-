@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+# how do i do this in not pseudo code?
+#config.active_record.whitelist_attributes = false 
+
 module Litmag3
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

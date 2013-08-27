@@ -1,0 +1,41 @@
+<%= form_for(@submission_restriction) do |f| %>
+  <% if @submission_restriction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@submission_restriction.errors.count, "error") %> prohibited this submission restriction from being saved:</h2>
+
+      <ul>
+      <% @submission_restriction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- <div class="field">
+    <%#= radio_button_tag (:gender, "Gender") %><br>
+    <%#= label_tag (:gender_female, "Female") %><br>
+    <%#= radio_button_tag (:gender, "Gender") %><br>
+    <%#= label_tag (:gender_male, "Male") %><br>
+  </div> -->
+  <div class="field">
+    <%= f.label :ethnicity, 'Ethnicity'%><br>
+    <%= f.text_field :ethnicity %>
+  </div>
+  <div class="field">
+    <%= f.label :age, 'Age'%><br>
+    <%= f.number :age %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :genre %><br>
+    <%= f.select :genre, [['What shows up in your view', 'What shows up in your database'],
+                              ['Another Genre', 'Another Genre'],
+                              ['Genre 3', 'Genre 3'],
+                              ['Genre 4', 'Genre 4']] %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
